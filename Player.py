@@ -8,18 +8,15 @@ from SpaceJamClasses import Missile
 
 class Player(SphereCollideObject):
     def __init__(self, loader: Loader, modelPath: str, parentNode: NodePath, nodeName: str, texPath: str, posVec: Vec3, scaleVec: float, taskManager: Task, renderer: NodePath, accept: Callable[[str,Callable], None]):
-        super(Player, self).__init__(loader, modelPath, parentNode, nodeName, Vec3(0, 0, 0), 0.5)
+        super(Player, self).__init__(loader, modelPath, parentNode, nodeName, Vec3(0, 0, 0), 3)
         self.accept = accept
         self.taskManager = taskManager
         self.renderer = renderer
         self.render = parentNode
         self.loader = loader
-        self.modelNode = loader.loadModel(modelPath)
-        self.modelNode.reparentTo(parentNode)
         self.modelNode.setPos(posVec)
         self.modelNode.setScale(scaleVec)
 
-        self.modelNode.setName(nodeName)
         tex = loader.loadTexture(texPath)
         self.modelNode.setTexture(tex, 1)
 
