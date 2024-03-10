@@ -21,6 +21,11 @@ class SpaceJam(ShowBase): #Constructor
             spaceJamClasses.Drone.droneCount += 1
             nickName = "Drone" + str(spaceJamClasses.Drone.droneCount)
             self.DrawCloudDefense(self.Planet1, nickName)
+            self.DrawCloudDefense(self.Planet2, nickName)
+            self.DrawCloudDefense(self.Planet3, nickName)                       
+            self.DrawCloudDefense(self.Planet4, nickName)
+            self.DrawCloudDefense(self.Planet5, nickName)
+            self.DrawCloudDefense(self.Planet6, nickName)
             self.DrawBaseballSeams(self.Station, nickName, j, fullCycle, 1)
         self.DrawCircleXY()
         self.DrawCircleXZ()
